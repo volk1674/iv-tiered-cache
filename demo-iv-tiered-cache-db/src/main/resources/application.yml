@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 100
+          fetch_size: 100
+        order_updates: true
+        order_inserts: true
+  datasource:
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/tieredcache
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/tieredcache
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
+    change-log: classpath:changelog/db.changelog-master.xml
+    enabled: true

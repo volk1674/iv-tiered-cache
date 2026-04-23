@@ -1,0 +1,21 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/tieredcache
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/tieredcache
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
+    change-log: classpath:changelog/db.changelog-master.xml
+    enabled: true
+
+
+tiered-cache:
+  demo-object:
+    name: demo
+
+
+logging:
+  level:
+    io.github.iv.tieredcache: DEBUG
