@@ -9,7 +9,7 @@ public interface ReactiveTieredCacheDataProvider<K, V> {
 
     Mono<Map<K, V>> load(Collection<K> keys);
 
-    default boolean checkVersion(V v) {
+    default boolean checkMetadataVersion(V v) {
         return true;
     }
 }

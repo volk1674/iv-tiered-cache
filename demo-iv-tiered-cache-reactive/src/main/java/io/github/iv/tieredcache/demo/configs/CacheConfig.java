@@ -65,7 +65,7 @@ public class CacheConfig {
         return new ReactiveTieredCacheRedis<>(
                 redisTemplate,
                 cacheProperties,
-                dataProvider::checkVersion,
+                dataProvider::checkMetadataVersion,
                 meterRegistry);
     }
 
